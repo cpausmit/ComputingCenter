@@ -1,0 +1,31 @@
+My initial CO2 calculations came from Reference [1]. That has a national number
+of 884.2 lbs CO2/MWh. Joe has a slightly lower number in his table of 700lbs
+CO2/MWh for Northeast Region - so it makes sense to use that. For a 700W
+computer I originally did
+
+   (comp_power)*(PUE)*(hours per yr)*(CO2lbs/kwh)*(computer utilization)/
+   (lbs per metric tonne)
+
+    0.700*1.25*(365*24)*0.84*0.9/2204 = 2.6
+
+Redoing with regional number and PUE from latest MGHPCC facility chart I get
+
+  0.700*1.14*(365*24)*0.7*0.9/2204 = 2
+
+
+[1] https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references
+
+Attached images are from monthly MGHPCC operations reviews.  PUE (green curve on
+the line chart) is running at 1.14. You can see seasonal variations due to
+chillers being needed in summer. PUE official definition is annual average.  Bar
+chart shows the various bits of facility infrastructure that are on the facility
+side of the electricity company transformer. These are what goes into the PUE
+numerator.
+   
+    --> pue-holyoke.png
+    --> facility-load-holyoke.png
+
+
+Bates: Tier-2 computing hardware list in
+
+bates-tier2-nodes.dat
